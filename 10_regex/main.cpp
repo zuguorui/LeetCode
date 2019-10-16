@@ -44,7 +44,7 @@ bool matchRegex(string s, string p)
         
         if(matchMode == 0)
         {
-            while(s.at(sOffset) == p1)
+            while(s.at(sOffset) == p1 && sOffset < s.size())
             {
                 sOffset++;
             }
@@ -57,7 +57,7 @@ bool matchRegex(string s, string p)
             }
             
         }else{
-            while(s.at(sOffset) == p1)
+            while(s.at(sOffset) == p1 && sOffset < s.size())
             {
                 sOffset++;
             }
@@ -71,7 +71,7 @@ bool matchRegex(string s, string p)
             sOffset = 1;
             return matchRegex(s.substr(sOffset, s.size() - sOffset), p.substr(pOffset, p.size() - pOffset));
         }else{
-            while(s.at(sOffset) == matchTarget)
+            while(s.at(sOffset) == matchTarget && sOffset < s.size())
             {
                 sOffset++;
             }
