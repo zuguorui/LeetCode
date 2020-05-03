@@ -7,18 +7,14 @@
 #include "shell_sort.h"
 #include "insert_sort.h"
 #include "merge_sort.h"
+#include "heap_sort.h"
+#include "tree_sort.h"
 #include "util.h"
 
 using namespace std;
 
 
-
-
-
-
-
-
-static const int SRC_LEN = 20;
+static const int SRC_LEN = 200;
 
 int main()
 {
@@ -35,17 +31,34 @@ int main()
 
     // insert_sort(src, 0, SRC_LEN - 1);
 
-    // print_int_array(src, SRC_LEN, 6);
+    // merge_sort(src, 0, SRC_LEN - 1);
 
-    merge_sort(src, 0, SRC_LEN - 1);
+    // heap_sort(src, 0, SRC_LEN - 1);
 
-    print_int_array(src, SRC_LEN, 6);
+    printf("original array: \n");
+
+    print_int_array(src, SRC_LEN, 10);
+
+    tree_sort(src, 0, SRC_LEN - 1);
+
+    print_int_array(src, SRC_LEN, 10);
 
     check_sort(src, SRC_LEN, 1);
 
-    long a = 0;
+    // BinaryHeap<int> heap(SRC_LEN);
+    // for(int i = 0; i < SRC_LEN; i++)
+    // {
+    //     heap.push(src[i]);
+    // }
 
-    // printf("size of long = %d\n", sizeof(a));
+    // for(int i = 0; i < SRC_LEN; i++)
+    // {
+    //     if(!heap.remove(src[i]))
+    //     {
+    //         printf("remove element %d error\n", src[i]);
+    //     }
+    // }
+
 
     getchar();
 

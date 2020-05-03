@@ -62,8 +62,8 @@
     
 // }
 
-// template<typename T>
-void merge_sort(int *src, int32_t l, int32_t r)
+template<typename T>
+void merge_sort(T *src, int32_t l, int32_t r)
 {
     if(l >= r)
     {
@@ -75,7 +75,7 @@ void merge_sort(int *src, int32_t l, int32_t r)
     
     int sortCount = 0;
 
-    int *tempArray = (int *)malloc(len * sizeof(int));
+    T *tempArray = (int *)malloc(len * sizeof(T));
 
     int dis = 1;
 
@@ -116,7 +116,7 @@ void merge_sort(int *src, int32_t l, int32_t r)
             }
             mergeStart += 2 * dis;
         }
-        memcpy(src + l, tempArray, len * sizeof(int));
+        memcpy(src + l, tempArray, len * sizeof(T));
         dis *= 2;
 
     }
